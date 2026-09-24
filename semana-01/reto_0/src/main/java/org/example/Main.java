@@ -6,8 +6,8 @@ public class Main {
         System.out.println("--- INICIANDO UDITVERSUM ---");
 
         Platform plataform = new Platform(new ArrayList<>());
-        plataform.agregarEpisode(null);
-        plataform.procesarCatalogo();
+        plataform.newEpisode(null);
+        plataform.processCatalog();
         /*
         //1. MALA PRACTICA: Toda la logica de negocio tirada al Main, los diamantes <> obligan a que la lista SOLO acepte episodios
         ArrayList<Episode> catalog = new ArrayList<>();
@@ -23,7 +23,7 @@ public class Main {
 
         //3. BUCLE FOR - EACH Por cada episodio dentro del catalogo
         for(Episode ep : catalog) {
-            ep.procesar();//Aqui ocurre el bloque secuencial de 2s
+            ep.process();//Aqui ocurre el bloque secuencial de 2s
         }
 
         long fin = System.currentTimeMillis();

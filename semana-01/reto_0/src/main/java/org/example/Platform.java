@@ -9,7 +9,7 @@ public class Platform {
         this.catalog = new ArrayList<>();
     }
 
-    public void agregarEpisode(Episode e) {
+    public void newEpisode(Episode e) {
         catalog.add(new Episode("Diseño 3D - Intro", 45));
         catalog.add(new Episode("Animación", 60));
         catalog.add(new Episode("Texturas", 50));
@@ -19,9 +19,9 @@ public class Platform {
 
     long start = System.currentTimeMillis();
 
-    public void procesarCatalogo() {
+    public void processCatalog() {
         for(Episode e : catalog) {
-            e.procesar();
+            e.process();
         }
 
         long fin = System.currentTimeMillis();

@@ -14,7 +14,7 @@ public class Episode {
 
     //METODO: La acción simula la carga lenta del servidor
 
-    public void procesar() {
+    public void process() {
         System.out.println("Iniciando procesamiento de: " + this.title + "...");
         //El bloque try-catch es OBLIGATORIO en java al pausar el hilo (Thread)
         //Evita que el programa explote (crash) si el SO interrumpe la pausa
