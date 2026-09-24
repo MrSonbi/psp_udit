@@ -4,6 +4,11 @@ import java.util.ArrayList; //Herramientas nativas para listas
 public class Main {
     public static void main(String[] args) {
         System.out.println("--- INICIANDO UDITVERSUM ---");
+
+        Platform plataform = new Platform(new ArrayList<>());
+        plataform.agregarEpisode(null);
+        plataform.procesarCatalogo();
+        /*
         //1. MALA PRACTICA: Toda la logica de negocio tirada al Main, los diamantes <> obligan a que la lista SOLO acepte episodios
         ArrayList<Episode> catalog = new ArrayList<>();
 
@@ -28,5 +33,6 @@ public class Main {
         long totalSegundos = (fin - start) / 1000;
 
         System.out.println("Tiempo total: " + totalSegundos + " segundos de bloqueo.");
+        */
     }
 }
