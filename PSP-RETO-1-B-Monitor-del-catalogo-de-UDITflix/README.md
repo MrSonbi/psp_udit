@@ -14,7 +14,7 @@
 
 Un programa de consola que simula el monitor interno de UDITflix: comprueba si cada elemento del catálogo de contenidos está **ACTIVO** o **CAÍDO**. Para cada uno lanza un proceso externo (`ping`), muestra su PID, lee lo que responde y espera a que termine.
 
-![alt text](image-1.png)
+![alt text](image.png)
 
 ---
 
