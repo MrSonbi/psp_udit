@@ -252,6 +252,25 @@ La diferencia con x es que ahí el ping sí se lanza correctamente y termina con
 
 ---
 
+## (Reto 2: Actualización Crítica en Producción (Laboratorio Multiproceso))
+
+### 5. Mundo real: ¿qué sistemas profesionales utilizan esta lógica de health checks (comprobaciones de estado de servicios)?
+
+*Esta lógica de comprobación de estados (health checks) es fundamental en la arquitectura de sistemas modernos y se utiliza constantemente en entornos de producción:
+
+-Orquestadores de contenedores: Herramientas como Kubernetes o Docker Swarm realizan comprobaciones de vida (liveness y readiness probes) de forma continua para saber si un contenedor está funcionando o si se ha quedado colgado, procediendo a reiniciarlo automáticamente si falla.
+
+-Balanceadores de carga y pasarelas de API: Sistemas como Nginx, HAProxy o los balanceadores en la nube (AWS ALB, Google Cloud Load Balancer) lanzan pings o peticiones HTTP periódicas a los servidores backend. Si detectan que uno no responde, dejan de enviarle tráfico de usuarios para evitar errores.
+
+-Sistemas de monitorización: Herramientas como Nagios, Prometheus o Datadog vigilan la disponibilidad de redes, bases de datos y microservicios para alertar a los administradores de sistemas ante una caída.*
+
+### 6. Reflexión sobre tus tiempos: viendo los tiempos que has medido, si auditaras 50 servidores lentos, ¿cuánto tardaría el programa de forma secuencial y cuánto en paralelo?
+
+*-De forma secuencial: Si el programa lanzara un ping tras otro esperando a que cada uno termine, al tardar cada timeout 3 segundos, el cálculo sería $50 \text{ servidores} \times 3 \text{ segundos} = \textbf{150 segundos}$ (2 minutos y medio). El tiempo aumentaría linealmente con cada servidor añadido.
+-En paralelo (concurrente): Gracias a la arquitectura basada en procesos concurrentes que hemos implementado, todos los pings se lanzan a la vez. Por lo tanto, el programa no espera la suma de todos, sino que finaliza cuando responde el proceso más lento. El tiempo total seguiría rondando los 3 segundos (más un mínimo margen de milisegundos que tarde el sistema operativo en planificar los 50 procesos simultáneos).*
+
+---
+
 ## 🛡️ Preparación para la defensa: ¿sabría hacer esto en directo?
 
 Durante la defensa te pediré pequeñas modificaciones. Practica estas **antes** de entregar y marca las que ya sabes hacer sin ayuda:

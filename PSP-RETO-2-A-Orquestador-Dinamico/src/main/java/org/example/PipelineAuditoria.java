@@ -13,7 +13,7 @@ public class PipelineAuditoria {
         System.out.println("==============================================\n");
 
         try {
-            List<String> lineasIps = Files.readAllLines(Paths.get("C:\\Users\\Sonbi\\Documents\\UDIT_2026-2027\\PSP\\psp_udit\\PSP-RETO-2-Pipeline-de-Auditoria\\src\\main\\resources\\servidores.txt"));
+            List<String> lineasIps = Files.readAllLines(Paths.get("C:\\Users\\Sonbi\\Documents\\UDIT_2026-2027\\PSP\\psp_udit\\PSP-RETO-2-A-Orquestador-Dinamico\\src\\main\\resources\\servidores.txt"));
 
             ArrayList<Process> listaProcesos = new ArrayList<>();
 
