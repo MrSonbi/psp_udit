@@ -267,6 +267,7 @@ La diferencia con x es que ahí el ping sí se lanza correctamente y termina con
 ### 6. Reflexión sobre tus tiempos: viendo los tiempos que has medido, si auditaras 50 servidores lentos, ¿cuánto tardaría el programa de forma secuencial y cuánto en paralelo?
 
 *-De forma secuencial: Si el programa lanzara un ping tras otro esperando a que cada uno termine, al tardar cada timeout 3 segundos, el cálculo sería $50 \text{ servidores} \times 3 \text{ segundos} = \textbf{150 segundos}$ (2 minutos y medio). El tiempo aumentaría linealmente con cada servidor añadido.
+
 -En paralelo (concurrente): Gracias a la arquitectura basada en procesos concurrentes que hemos implementado, todos los pings se lanzan a la vez. Por lo tanto, el programa no espera la suma de todos, sino que finaliza cuando responde el proceso más lento. El tiempo total seguiría rondando los 3 segundos (más un mínimo margen de milisegundos que tarde el sistema operativo en planificar los 50 procesos simultáneos).*
 
 ---
